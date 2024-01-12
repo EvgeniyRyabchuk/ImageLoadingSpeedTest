@@ -84,9 +84,12 @@ const imageContainer = document.querySelector('.image_container');
 // }
 
 for(let path of imagePahtList) {
-    if(imageType.ext === "bpg" || imageType.ext === "flif" || imageType.ext === "jxl") {
+    if(imageType.ext === "bpg" || imageType.ext === "jxl") {
         imageContainer.innerHTML += `<img src=\"${path}\">`; 
-    } else {
+    } else if(imageType.ext === "flif") {
+        imageContainer.innerHTML += `<canvas data-polyflif-src=\"${path}\"></canvas>`; 
+    }
+    else {
         const pngPath = path.replace(`.${imageType.ext}`, "")+".png"
         console.log(pngPath); 
         const htmlText =  
@@ -106,7 +109,7 @@ for(let path of imagePahtList) {
     // } 
 }
 
- 
+
 
 
 console.log(imageContainer);
