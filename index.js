@@ -9,7 +9,7 @@
 "./images/people_nature_1_ver.png"
 "./images/nature_hor_2.png"
 
-const imageCount = 8;
+const imageCount = 7;
 
 const pathGenerator = (count, text, ext, basename) => {
     const paths = []; 
@@ -84,24 +84,22 @@ const imageContainer = document.querySelector('.image_container');
 // }
 
 for(let path of imagePahtList) {
-    if(imageType.ext === "bpg" || imageType.ext === "jxl") {
+    if(imageType.ext === "bpg" || imageType.ext === "jxl" || imageType.ext === "jpg") {
         imageContainer.innerHTML += `<img src=\"${path}\">`; 
     } else if(imageType.ext === "flif") {
         imageContainer.innerHTML += `<canvas data-polyflif-src=\"${path}\"></canvas>`; 
     }
-    else {
+    else if(imageType.ext === "avif" || imageType.ext === "webp") {
         const pngPath = path.replace(`.${imageType.ext}`, "")+".png"
         console.log(pngPath); 
         const htmlText =  
         "<picture>"+
-            `<source srcset=\"${path}\" type=\"image/avif\">`+
+            `<source srcset=\"${path}\" type=\"image/${imageType.ext}\">`+
             `<img src=\"${pngPath}\">`+ 
         "</picture>"
         imageContainer.innerHTML += htmlText; 
-        console.log("123");
     }
       
-    
     // for(let path of imagePahtList) {
     //     const imageTag = document.createElement("img");
     //     imageTag.setAttribute("src", path); 

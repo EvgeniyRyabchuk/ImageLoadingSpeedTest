@@ -62,7 +62,7 @@
     }
     const res = await fetch(jxlSrc);
     const image = await res.arrayBuffer();
-    workers[jxlSrc] = new Worker('./jxl_hanler/jxl_dec.js');
+    workers[jxlSrc] = new Worker('/jxl_handler/jxl_dec.js'); 
     workers[jxlSrc].postMessage({jxlSrc, image});
     workers[jxlSrc].addEventListener('message', m => m.data.imgData && requestAnimationFrame(() => imgDataToDataURL(img, m.data.imgData, isCSS, isSource)));
   }
