@@ -9,6 +9,8 @@
 
 body {
     padding: 20px;
+    font-family: 'Roboto', sans-serif;
+             
 }
 
 /*! CSS Used from: Embedded */
@@ -113,9 +115,3 @@ img {
     margin: 2px;
 }
 
-/*! CSS Used fontfaces */
-@font-face {
-    font-family: Roboto;
-    src: url(http://localhost:3000/static/media/Roboto-Black.cf56c1b149d0a5e8d7c6.ttf);
-    font-weight: auto;
-}
