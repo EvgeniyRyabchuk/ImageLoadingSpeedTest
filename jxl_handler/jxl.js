@@ -2,7 +2,7 @@
   "use strict";
 
   const config = {
-    useCache: true,
+    useCache: false,
     imageType: 'jpeg' // jpeg/png/webp
   };
 
